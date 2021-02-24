@@ -1,0 +1,48 @@
+﻿@model IEnumerable<MVC_DynamicMenu.Models.UserPermission>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.PermissionId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MenuItem)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Permission)
+            </th>
+            <th>
+                UsersUserId
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayNameFor(model => model.PermissionId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MenuItem)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Permission)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Users)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
